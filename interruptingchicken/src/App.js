@@ -1,5 +1,9 @@
+import React, {Component} from 'react';
+
 import logo from './logo.svg';
 import './App.css';
+//import './Tut.css';
+import PopBtn from './PopBtn';
 
 function App() {
   return (
@@ -18,8 +22,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <PopBtn />
     </div>
+    
   );
 }
-
 export default App;
