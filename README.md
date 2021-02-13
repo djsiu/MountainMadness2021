@@ -1,2 +1,3 @@
 # MountainMadness2021
-we don't know what we're doing
+Interrupting Chicken by David Ezra Stein
+A typing test with a chicken that interrupts you
