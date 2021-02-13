@@ -3,6 +3,7 @@ import './App.css';
 import {generate} from './utils/words'
 import useKeyPress from './hooks/useKeyPress'
 import React, {useState} from 'react';
+import PopBtn from './PopBtn';
 
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <PopBtn />
     </div>
   );
 }
