@@ -51,14 +51,12 @@ function Timer() {
 
 
   return (
-    <div className="main-section">
      <div className="clock-holder">
           <div className="stopwatch">
                <DisplayComponent time={time}/>
                <BtnComponent status={status} resume={resume} reset={reset} stop={stop} start={start}/>
           </div>
      </div>
-    </div>
   );
 }
 
