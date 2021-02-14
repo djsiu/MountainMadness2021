@@ -1,56 +1,56 @@
 .TypingPage {
-    text-align: center;
-    font-family: monospace;
-  }
-  
+  text-align: center;
+  font-family: monospace;
+}
+
+.TypingPage-logo {
+  height: 45vmin;
+  pointer-events: none;
+  padding: 20px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
   .TypingPage-logo {
-    height: 40vmin;
-    pointer-events: none;
+    animation: TypingPage-logo-spin infinite 20s linear;
   }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .TypingPage-logo {
-      animation: TypingPage-logo-spin infinite 20s linear;
-    }
+}
+
+.TypingPage-header {
+  background-color: #282c34;
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.TypingPage-link {
+  color: #61dafb;
+}
+
+@keyframes TypingPage-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  .TypingPage-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  to {
+    transform: rotate(360deg);
   }
-  
-  .TypingPage-link {
-    color: #61dafb;
-  }
-  
-  @keyframes TypingPage-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .Character {
-    white-space: pre;
-  }
-  
-  .Character-current {
-    background-color: #09d3ac;
-  }
-  
-  .Character-current-incorrect {
-    background-color: #FF0000;
-  }
-  
-  .Character-out {
-    color: silver;
-  }
-  
+}
+
+.Character {
+  white-space: pre;
+}
+
+.Character-current {
+  background-color: #09d3ac;
+}
+
+.Character-current-incorrect {
+  background-color: #ff0000;
+}
+
+.Character-out {
+  color: silver;
+}
