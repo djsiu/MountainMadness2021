@@ -58,7 +58,6 @@
 .wpm {
   font-weight: 100;
   padding: 10px;
-  color: #627292;
-  opacity: 75%;
+  color: red;
   font-size: 38px;
 }
