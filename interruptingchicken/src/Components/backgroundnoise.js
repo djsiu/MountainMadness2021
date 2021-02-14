@@ -47,8 +47,8 @@ class Music extends React.Component {
 
         return (
             <div className="btn-block">
-                <button className="btn btn-gre" onClick={this.play}>Play</button>
-                <button className="btn btn-gre" onClick={this.pause}>Pause</button>
+                <button className="btn btn-gre" onClick={this.play}>Music On</button>
+                <button className="btn btn-gre" onClick={this.pause}>Music Off</button>
             </div>
         );
     }

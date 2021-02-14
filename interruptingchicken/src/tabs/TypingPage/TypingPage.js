@@ -123,7 +123,6 @@ function TypingPage() {
   return (
     <div className="TypingPage">
       <header className="TypingPage-header">
-        <h3 className="wpm">WPM: {wpm}</h3>
         <img src={logo_chick} className="TypingPage-logo" alt="logo" />
         <p className="Character">
           <span className="Character-out">
@@ -134,12 +133,8 @@ function TypingPage() {
         </p>
       </header>
       {popupFlag ? <Popup text={keyWords[index]} closePopup={toggleVars} chick={chicks[chick_index]}/> : null}
-<<<<<<< HEAD
       <Timer start={startTyping} restart={restart}/>
       <h3 className="wpm">WPM: {wpm}</h3>
-=======
-      <Timer/>
->>>>>>> 4b98a2037fb8ce441d5f9ae42e4f3e25779e7cd7
     </div>
   );
 }
