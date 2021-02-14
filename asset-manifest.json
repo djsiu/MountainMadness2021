@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/MountainMadness2021/static/css/main.8684bb71.chunk.css",
+    "main.js": "/MountainMadness2021/static/js/main.31f4fd1e.chunk.js",
+    "main.js.map": "/MountainMadness2021/static/js/main.31f4fd1e.chunk.js.map",
+    "runtime-main.js": "/MountainMadness2021/static/js/runtime-main.bb006329.js",
+    "runtime-main.js.map": "/MountainMadness2021/static/js/runtime-main.bb006329.js.map",
+    "static/js/2.f6d828ce.chunk.js": "/MountainMadness2021/static/js/2.f6d828ce.chunk.js",
+    "static/js/2.f6d828ce.chunk.js.map": "/MountainMadness2021/static/js/2.f6d828ce.chunk.js.map",
+    "static/js/3.ba62b8b7.chunk.js": "/MountainMadness2021/static/js/3.ba62b8b7.chunk.js",
+    "static/js/3.ba62b8b7.chunk.js.map": "/MountainMadness2021/static/js/3.ba62b8b7.chunk.js.map",
+    "index.html": "/MountainMadness2021/index.html",
+    "static/css/main.8684bb71.chunk.css.map": "/MountainMadness2021/static/css/main.8684bb71.chunk.css.map",
+    "static/js/2.f6d828ce.chunk.js.LICENSE.txt": "/MountainMadness2021/static/js/2.f6d828ce.chunk.js.LICENSE.txt",
+    "static/media/Popup.css": "/MountainMadness2021/static/media/black-chick.90ea92e1.png",
+    "static/media/logo.6ce24c58.svg": "/MountainMadness2021/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bb006329.js",
+    "static/js/2.f6d828ce.chunk.js",
+    "static/css/main.8684bb71.chunk.css",
+    "static/js/main.31f4fd1e.chunk.js"
+  ]
+}
