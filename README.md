@@ -1,6 +1,7 @@
 # MountainMadness2021
-we don't know what we're doing
 
+we don't know what we're doing
+Interrupting Chicken by David Ezra Stein
 ## What our shit does
 
 - Issa typing test
