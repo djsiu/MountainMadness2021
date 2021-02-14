@@ -12,6 +12,8 @@ import chick1 from '../../chickens/black-chick.png';
 import chick2 from '../../chickens/staring-chick.png';
 import chick3 from '../../chickens/broiler-chick.png';
 
+import { currentTime } from './time';
+
 var index = 0;
 var chick_index = 0;
 
@@ -44,45 +46,62 @@ function TypingPage() {
   const soundUrl = '/sounds/chickenBok.mp3';
   const [play] = useSound(soundUrl);
 
+  const [startTime, setStartTime] = useState();
+  const [wordCount, setWordCount] = useState(0);
+  const [wpm, setWpm] = useState(0);
+
+
   function toggleVars() {
     setPopupFlag(!popupFlag);
   }
 
   useKeyPress(key => {
     //1
+
+    if (!startTime) {
+      setStartTime(currentTime());
+    }
+
     setCurrentCharCorrect(true);
 
     let updatedOutgoingChars = outgoingChars;
     let updatedIncomingChars = incomingChars;
     
-    //2
-    if (key === currentChar && !popupFlag) {
-      //3
-      if (leftPadding.length > 0) {
-        setLeftPadding(leftPadding.substring(1));
-      }
-      //4
-      updatedOutgoingChars += currentChar;
-      setOutgoingChars(updatedOutgoingChars);
-      
-      //5      
-      setCurrentChar(incomingChars.charAt(0));
-      
-      //6
-      updatedIncomingChars = incomingChars.substring(1);
-      if (updatedIncomingChars.split(' ').length < 10) {
-        updatedIncomingChars +=' ' + generate();
-      }
-      setIncomingChars(updatedIncomingChars);
-    } else {
-      if(!popupFlag) {
-        index = Math.floor(Math.random()*keyWords.length);
-        chick_index = Math.floor(Math.random()*chicks.length);
-      }
-      setPopupFlag(true);
-      setCurrentCharCorrect(false);
-      play();
-    }
+      //2
+      if (key === currentChar && !popupFlag) {
+        if(key === currentChar) {
+          if (incomingChars.charAt(0) === ' ') {
+            setWordCount(wordCount + 1);
+            const durationInMinutes = (currentTime() - startTime) / 60000.0;
+            setWpm(((wordCount + 1) / durationInMinutes).toFixed(2));
+          }
+        }
+          //3
+          if (leftPadding.length > 0) {
+            setLeftPadding(leftPadding.substring(1));
+          }
+            //4
+          updatedOutgoingChars += currentChar;
+          setOutgoingChars(updatedOutgoingChars);
+            
+            //5      
+          setCurrentChar(incomingChars.charAt(0));
+            
+            //6
+          updatedIncomingChars = incomingChars.substring(1);
+          if (updatedIncomingChars.split(' ').length < 10) {
+            updatedIncomingChars +=' ' + generate();
+          }
+            setIncomingChars(updatedIncomingChars);
+          } else {
+          if(!popupFlag) {
+            index = Math.floor(Math.random()*keyWords.length);
+            chick_index = Math.floor(Math.random()*chicks.length);
+          }
+          setPopupFlag(true);
+          setCurrentCharCorrect(false);
+          play();
+        }
   });
 
   return (
@@ -98,6 +117,7 @@ function TypingPage() {
         </p>
       </header>
       {popupFlag ? <Popup text={keyWords[index]} closePopup={toggleVars} chick={chicks[chick_index]}/> : null}
+      <h3 className="wpm">WPM: {wpm}</h3>
       <Timer/>
     </div>
   );
