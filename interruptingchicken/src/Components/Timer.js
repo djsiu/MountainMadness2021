@@ -60,7 +60,7 @@ function Timer(props) {
   React.useEffect(() => {
     if (time.m == 1) {
       stop();
-      props.stop();
+      //props.stop();
       // reset();
     }
   }, [time]);
