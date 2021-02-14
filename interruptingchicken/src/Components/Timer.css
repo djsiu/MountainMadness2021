@@ -45,6 +45,8 @@
 .stopwatch .stopwatch-btn-yel {
   border: 2px solid #ffc900;
   color: #ffc900;
+  background-color: #282c34;
+  border-radius: 5px;
 }
 
 .stopwatch .stopwatch-btn-gre {
@@ -59,7 +61,7 @@
 .stopwatch .stopwatch-btn-yel:hover {
   background: #ffc900;
   border: 2px solid #ffc900;
-  color: #fff;
+  color: #282c34;
 }
 .stopwatch .stopwatch-btn-gre:hover {
   background: #00aba9;
