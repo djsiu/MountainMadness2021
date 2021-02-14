@@ -5,13 +5,10 @@ import React from 'react';
 
 import TypingPage from './tabs/TypingPage/TypingPage'
 
-import Timer from './Components/Timer';
-
 function App() {
   return (
     <div>
       <TypingPage/>
-      <Timer />
     </div>
   );
 }
