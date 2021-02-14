@@ -45,6 +45,7 @@ function TypingPage() {
   const [popupFlag, setPopupFlag] = useState(false);
   const [play] = useSound(chickenBok);
   const [startTyping, setStartTyping] = useState(false);
+  const [stopGame, setStopGame] = useState(true);
 
   const [startTime, setStartTime] = useState();
   const [wordCount, setWordCount] = useState(0);
@@ -57,7 +58,7 @@ function TypingPage() {
 
   function restart() {
     initialWords = generate();
-
+    
     setOutgoingChars('');
     setStartTyping(!startTyping);
     setCurrentChar(initialWords.charAt(0));
@@ -66,6 +67,13 @@ function TypingPage() {
     setPopupFlag(false);
     setWpm(0);
     setWordCount(0);
+    setStopGame(false);
+  }
+
+  function stop() {
+    setWpm(wordCount + 1);
+    setPopupFlag(false);
+    setStopGame(true);
   }
 
   useKeyPress(key => {
@@ -73,6 +81,7 @@ function TypingPage() {
 
     if (startTyping == false) {
       setStartTyping(true);
+      setStopGame(false);
     }
     if (!startTime) {
       setStartTime(currentTime());
@@ -84,40 +93,40 @@ function TypingPage() {
     let updatedIncomingChars = incomingChars;
     
       //2
-      if (key === currentChar && !popupFlag) {
-        if(key === currentChar) {
-          if (incomingChars.charAt(0) === ' ') {
-            setWordCount(wordCount + 1);
-            const durationInMinutes = (currentTime() - startTime) / 60000.0;
-            setWpm(((wordCount + 1) / durationInMinutes).toFixed(2));
-          }
+    if (key === currentChar && !popupFlag && !stopGame) {
+      if(key === currentChar) {
+        if (incomingChars.charAt(0) === ' ') {
+          setWordCount(wordCount + 1);
+          const durationInMinutes = (currentTime() - startTime) / 60000.0;
+          setWpm(((wordCount + 1) / durationInMinutes).toFixed(2));
         }
-          //3
-          if (leftPadding.length > 0) {
-            setLeftPadding(leftPadding.substring(1));
-          }
-            //4
-          updatedOutgoingChars += currentChar;
-          setOutgoingChars(updatedOutgoingChars);
-            
-            //5      
-          setCurrentChar(incomingChars.charAt(0));
-            
-            //6
-          updatedIncomingChars = incomingChars.substring(1);
-          if (updatedIncomingChars.split(' ').length < 10) {
-            updatedIncomingChars +=' ' + generate();
-          }
-            setIncomingChars(updatedIncomingChars);
-          } else {
-            if(!popupFlag) {
-              index = Math.floor(Math.random()*keyWords.length);
-              chick_index = Math.floor(Math.random()*chicks.length);
-              play();
-            }
-            setPopupFlag(true);
-            setCurrentCharCorrect(false);
+      }
+        //3
+        if (leftPadding.length > 0) {
+          setLeftPadding(leftPadding.substring(1));
         }
+          //4
+        updatedOutgoingChars += currentChar;
+        setOutgoingChars(updatedOutgoingChars);
+          
+          //5      
+        setCurrentChar(incomingChars.charAt(0));
+          
+          //6
+        updatedIncomingChars = incomingChars.substring(1);
+        if (updatedIncomingChars.split(' ').length < 10) {
+          updatedIncomingChars +=' ' + generate();
+        }
+          setIncomingChars(updatedIncomingChars);
+        } else if (!stopGame) {
+          if(!popupFlag) {
+            index = Math.floor(Math.random()*keyWords.length);
+            chick_index = Math.floor(Math.random()*chicks.length);
+            play();
+          }
+          setPopupFlag(true);
+          setCurrentCharCorrect(false);
+      }
   });
 
   return (
@@ -134,7 +143,7 @@ function TypingPage() {
         </p>
       </header>
       {popupFlag ? <Popup text={keyWords[index]} closePopup={toggleVars} chick={chicks[chick_index]}/> : null}
-      <Timer start={startTyping} restart={restart}/>
+      <Timer start={startTyping} restart={restart} stop={stop}/>
     </div>
   );
 }

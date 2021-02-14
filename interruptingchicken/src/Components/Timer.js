@@ -58,9 +58,9 @@ function Timer(props) {
   }, [props.start]);
 
   React.useEffect(() => {
-    if (time.s == 10) {
+    if (time.m == 1) {
       stop();
-      // props.restart();
+      props.stop();
       // reset();
     }
   }, [time]);
