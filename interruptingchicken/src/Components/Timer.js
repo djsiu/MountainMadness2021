@@ -45,7 +45,8 @@ function Timer(props) {
   const reset = () => {
     clearInterval(interv);
     setStatus(0);
-    setTime({ms:0, s:0, m:0, h:0})
+    setTime({ms:0, s:0, m:0, h:0});
+    props.restart();
   };
 
   const resume = () => start();
@@ -59,8 +60,8 @@ function Timer(props) {
   React.useEffect(() => {
     if (time.s == 10) {
       stop();
-      props.restart();
-      reset()
+      // props.restart();
+      // reset();
     }
   }, [time]);
   
@@ -68,7 +69,7 @@ function Timer(props) {
      <div className="clock-holder">
           <div className="stopwatch">
                <DisplayComponent time={time}/>
-               {/* <BtnComponent status={status}/> */}
+               <BtnComponent status={status} reset={reset}/>
           </div>
      </div>
   );
