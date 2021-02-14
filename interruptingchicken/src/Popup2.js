@@ -11,22 +11,22 @@ var keyWords = [
 ];
 
 function Popup(props) {
-    useKeyPress(key => {
+  useKeyPress(key => {
+    
+  });
 
-    });
+  var index;
+  index = Math.floor(Math.random()*keyWords.length);
+  //console.log(index);
 
-    var index;
-    index = Math.floor(Math.random()*keyWords.length);
-    console.log(index);
-
-    return (
-      <div className='popup'>
-        <div className='popup_inner'>
-          <h1>{keyWords[index]}</h1>
-          <button onClick={props.closePopup}>close me</button>
-        </div>
+  return (
+    <div className='popup'>
+      <div className='popup_inner'>
+        <h1>{keyWords[index]}</h1>
+        <button onClick={props.closePopup}>close me</button>
       </div>
-    );
+    </div>
+  );
 }
 
 export default Popup;
