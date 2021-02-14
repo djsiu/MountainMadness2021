@@ -58,7 +58,7 @@ function TypingPage() {
 
   function restart() {
     initialWords = generate();
-    
+
     setOutgoingChars('');
     setStartTyping(!startTyping);
     setCurrentChar(initialWords.charAt(0));
@@ -67,6 +67,7 @@ function TypingPage() {
     setPopupFlag(false);
     setWpm(0);
     setWordCount(0);
+    setStartTime();
     setStopGame(false);
   }
 
