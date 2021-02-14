@@ -3,7 +3,7 @@ import DisplayComponent from './DisplayComponent';
 import BtnComponent from './BtnComponent';
 import './Timer.css';
 
-function Timer() {
+function Timer(prop) {
   const [time, setTime] = useState({ms:0, s:0, m:0, h:0});
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(0);
@@ -49,6 +49,7 @@ function Timer() {
 
   const resume = () => start();
 
+  
 
   return (
      <div className="clock-holder">

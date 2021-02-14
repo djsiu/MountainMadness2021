@@ -3,6 +3,8 @@ import './Popup.css';
 import InputForm from './Components/InputForm';
 
 class Popup extends React.Component {
+
+
   render() {
     return (
       <div className='popup'>

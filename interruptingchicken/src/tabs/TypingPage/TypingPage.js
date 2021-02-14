@@ -6,6 +6,8 @@ import useKeyPress from '../../hooks/useKeyPress'
 import React, {useState} from 'react';
 import Popup from '../../Popup';
 import Timer from '../../Components/Timer';
+import useSound from 'use-sound';
+import chickenBok from '../../sounds/chickenBok.mp3'
 
 var index = 0;
 
@@ -29,6 +31,8 @@ function TypingPage() {
   const [incomingChars, setIncomingChars] = useState(initialWords.substr(1))
   const [currentCharCorrect, setCurrentCharCorrect] = useState(true);
   const [popupFlag, setPopupFlag] = useState(false);
+  const soundUrl = '/sounds/chickenBok.mp3';
+  const [play] = useSound(soundUrl);
 
   function toggleVars() {
     setPopupFlag(!popupFlag);
@@ -66,6 +70,7 @@ function TypingPage() {
       }
       setPopupFlag(true);
       setCurrentCharCorrect(false);
+      play();
     }
   });
 
