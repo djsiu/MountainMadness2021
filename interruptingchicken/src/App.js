@@ -5,9 +5,14 @@ import React from 'react';
 
 import TypingPage from './tabs/TypingPage/TypingPage'
 
+import Timer from './Components/Timer';
+
 function App() {
   return (
-    <TypingPage/>
+    <div>
+      <TypingPage/>
+      <Timer />
+    </div>
   );
 }
 
