@@ -8,6 +8,7 @@ import Popup from '../../Popup2'
 import Timer from '../../Components/Timer';
 
 
+
 function TypingPage() {
 
   const initialWords = generate()
@@ -72,6 +73,7 @@ function TypingPage() {
         </p>
       </header>
       {popupFlag ? <Popup text='end me' closePopup={toggleVars}/> : null}
+      <Timer />
     </div>
   );
 }
