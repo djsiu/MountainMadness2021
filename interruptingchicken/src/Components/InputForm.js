@@ -4,14 +4,13 @@ import React from 'react'
 class InputForm extends React.Component { 
     constructor(props) {
         super(props);
-        this.setInputFocus = this.setInputFocus.bind(this);
         this.state = {
             name : ''
         };
     }
 
-    setInputFocus() {
-        this.myInputRef.focus();
+    componentDidMount() {
+        this.myRef.focus();
     }
 
     handleChange(e) {
@@ -37,7 +36,11 @@ class InputForm extends React.Component {
         return (
             <div>
                 <Form onSubmit={this.handleSubmit.bind(this)}>
-                    <input onChange={this.handleChange.bind(this)} />
+                    <input 
+                    type="reset"
+                    defaultValue=''
+                    ref={(input) => { this.myRef = input;}}
+                    onChange={this.handleChange.bind(this)} />
                 </Form>
             </div>
         );
