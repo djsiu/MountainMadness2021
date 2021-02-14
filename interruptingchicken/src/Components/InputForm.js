@@ -4,10 +4,14 @@ import React from 'react'
 class InputForm extends React.Component { 
     constructor(props) {
         super(props);
-
+        this.setInputFocus = this.setInputFocus.bind(this);
         this.state = {
             name : ''
         };
+    }
+
+    setInputFocus() {
+        this.myInputRef.focus();
     }
 
     handleChange(e) {
