@@ -83,6 +83,7 @@ function TypingPage() {
         </p>
       </header>
       {popupFlag ? <Popup text={keyWords[index]} closePopup={toggleVars}/> : null}
+      <Timer/>
     </div>
   );
 }
