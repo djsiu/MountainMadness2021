@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/MountainMadness2021/static/css/main.202a8d3a.chunk.css",
+    "main.css": "/MountainMadness2021/static/css/main.98769b43.chunk.css",
     "main.js": "/MountainMadness2021/static/js/main.cb1a4fc3.chunk.js",
     "main.js.map": "/MountainMadness2021/static/js/main.cb1a4fc3.chunk.js.map",
     "runtime-main.js": "/MountainMadness2021/static/js/runtime-main.5854a14d.js",
@@ -12,7 +12,7 @@
     "static/js/4.c13aadfb.chunk.js": "/MountainMadness2021/static/js/4.c13aadfb.chunk.js",
     "static/js/4.c13aadfb.chunk.js.map": "/MountainMadness2021/static/js/4.c13aadfb.chunk.js.map",
     "index.html": "/MountainMadness2021/index.html",
-    "static/css/main.202a8d3a.chunk.css.map": "/MountainMadness2021/static/css/main.202a8d3a.chunk.css.map",
+    "static/css/main.98769b43.chunk.css.map": "/MountainMadness2021/static/css/main.98769b43.chunk.css.map",
     "static/js/2.7341f551.chunk.js.LICENSE.txt": "/MountainMadness2021/static/js/2.7341f551.chunk.js.LICENSE.txt",
     "static/js/3.77185c2b.chunk.js.LICENSE.txt": "/MountainMadness2021/static/js/3.77185c2b.chunk.js.LICENSE.txt",
     "static/media/black-chick.90ea92e1.png": "/MountainMadness2021/static/media/black-chick.90ea92e1.png",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.5854a14d.js",
     "static/js/2.7341f551.chunk.js",
-    "static/css/main.202a8d3a.chunk.css",
+    "static/css/main.98769b43.chunk.css",
     "static/js/main.cb1a4fc3.chunk.js"
   ]
 }
