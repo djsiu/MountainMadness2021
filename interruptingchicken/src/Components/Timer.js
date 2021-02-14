@@ -14,7 +14,7 @@ function Timer(prop) {
   const start = () => {
     run();
     setStatus(1);
-    setInterv(setInterval(run, 10));
+    setInterv(setInterval(run, 1));
   };
 
   var updatedMs = time.ms, updatedS = time.s, updatedM = time.m, updatedH = time.h;
@@ -49,7 +49,7 @@ function Timer(prop) {
 
   const resume = () => start();
 
-  
+
 
   return (
      <div className="clock-holder">
