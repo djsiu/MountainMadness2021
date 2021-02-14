@@ -1,5 +1,5 @@
 # MountainMadness2021
-Book Theme: Interrupting Chicken by David Ezra Stein
+Book Theme: Interrupting Chicken by David Ezra Stein<br>
 Website: https://jacksonn-gtc.github.io/MountainMadness2021/
 
 ## What our web application does
