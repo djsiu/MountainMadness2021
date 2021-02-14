@@ -7,11 +7,14 @@ import TypingPage from './tabs/TypingPage/TypingPage'
 
 import Timer from './Components/Timer';
 
+import Music from './Components/backgroundnoise'
+
 function App() {
   return (
     <div>
       <TypingPage/>
       <Timer />
+      <Music/>
     </div>
   );
 }
