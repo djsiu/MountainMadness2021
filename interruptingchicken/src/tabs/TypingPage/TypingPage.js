@@ -3,7 +3,7 @@ import './TypingPage.css';
 import {generate} from '../../utils/words'
 import useKeyPress from '../../hooks/useKeyPress'
 import React, {useState} from 'react';
-import Popup from '../../Popup2'
+import Popup from '../../Popup'
 
 
 function TypingPage() {
@@ -13,6 +13,7 @@ function TypingPage() {
   const [leftPadding, setLeftPadding] = useState(
     new Array(20).fill(' ').join(''),
   );
+
   const [outgoingChars, setOutgoingChars] = useState('');
   const [currentChar, setCurrentChar] = useState(initialWords.charAt(0));
   const [incomingChars, setIncomingChars] = useState(initialWords.substr(1))
