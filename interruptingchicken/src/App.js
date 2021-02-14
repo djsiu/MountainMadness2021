@@ -6,19 +6,13 @@ import React from 'react';
 import TypingPage from './tabs/TypingPage/TypingPage'
 import Timer from './Components/Timer'
 
-import Timer from './Components/Timer';
-
 import Music from './Components/backgroundnoise'
 
 function App() {
   return (
     <div>
       <TypingPage/>
-      <Timer />
-<<<<<<< HEAD
-=======
       <Music/>
->>>>>>> 0b7fa36bfe15a458299bf799915b519e60c0071a
     </div>
   );
 }
