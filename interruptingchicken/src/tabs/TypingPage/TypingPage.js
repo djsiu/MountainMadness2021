@@ -144,7 +144,7 @@ function TypingPage() {
         </p>
       </header>
       {popupFlag ? <Popup text={keyWords[index]} closePopup={toggleVars} chick={chicks[chick_index]}/> : null}
-      <Timer start={startTyping} restart={restart}/>
+      <Timer start={startTyping} restart={restart} stop={stop}/>
     </div>
   );
 }
