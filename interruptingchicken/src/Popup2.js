@@ -1,6 +1,7 @@
 import React from 'react';
 import './Popup.css';
 import useKeyPress from './hooks/useKeyPress';
+import chick from './chickens/black-chick.png';
 
 var keyWords = [
     "cluck",
@@ -21,10 +22,9 @@ function Popup(props) {
 
   return (
     <div className='popup'>
-      <div className='popup_inner'>
-        <h1>{keyWords[index]}</h1>
-        <button onClick={props.closePopup}>close me</button>
-      </div>
+      <h1 className='keyWord'>{keyWords[index]}</h1>
+      <button onClick={props.closePopup}>close me</button>
+      <img src={chick} className="chick-pic" alt="logo" />
     </div>
   );
 }

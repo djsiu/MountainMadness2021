@@ -5,13 +5,14 @@ import React from 'react';
 
 import TypingPage from './tabs/TypingPage/TypingPage'
 
-import Timer from './Components/Timer';
-
 function App() {
   return (
     <div>
       <TypingPage/>
+<<<<<<< HEAD
       {/* <Timer /> */}
+=======
+>>>>>>> e3ae3dc432d9c4736a1305e6a462f2079f2ad762
     </div>
   );
 }

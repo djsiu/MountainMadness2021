@@ -4,11 +4,19 @@ import './TypingPage.css';
 import {generate} from '../../utils/words'
 import useKeyPress from '../../hooks/useKeyPress'
 import React, {useState} from 'react';
-import Popup from '../../Popup2'
+import Popup from '../../Popup';
 import Timer from '../../Components/Timer';
 
+var index = 0;
 
 function TypingPage() {
+  var keyWords = [
+    "cluck",
+    "bok",
+    "egg",
+    "chicken",
+    "hen"
+  ];
 
   const initialWords = generate()
 
@@ -54,6 +62,9 @@ function TypingPage() {
       }
       setIncomingChars(updatedIncomingChars);
     } else {
+      if(!popupFlag) {
+        index = Math.floor(Math.random()*keyWords.length);
+      }
       setPopupFlag(true);
       setCurrentCharCorrect(false);
     }
@@ -71,7 +82,7 @@ function TypingPage() {
           <span>{incomingChars.substr(0, 20)}</span>
         </p>
       </header>
-      {popupFlag ? <Popup text='end me' closePopup={toggleVars}/> : null}
+      {popupFlag ? <Popup text={keyWords[index]} closePopup={toggleVars}/> : null}
     </div>
   );
 }
