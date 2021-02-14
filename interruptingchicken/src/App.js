@@ -7,7 +7,9 @@ import TypingPage from './tabs/TypingPage/TypingPage'
 
 function App() {
   return (
-    <TypingPage/>
+    <div>
+      <TypingPage/>
+    </div>
   );
 }
 
