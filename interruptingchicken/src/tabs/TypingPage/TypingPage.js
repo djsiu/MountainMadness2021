@@ -35,7 +35,6 @@ function TypingPage() {
   }
 
   useKeyPress(key => {
-
     //1
     setCurrentCharCorrect(true);
 
