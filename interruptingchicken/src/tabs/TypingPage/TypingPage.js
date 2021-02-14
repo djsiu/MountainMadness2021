@@ -145,7 +145,6 @@ function TypingPage() {
       </header>
       {popupFlag ? <Popup text={keyWords[index]} closePopup={toggleVars} chick={chicks[chick_index]}/> : null}
       <Timer start={startTyping} restart={restart}/>
-      <h3 className="wpm">WPM: {wpm}</h3>
     </div>
   );
 }
