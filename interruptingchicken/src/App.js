@@ -4,6 +4,7 @@ import {generate} from './utils/words'
 import useKeyPress from './hooks/useKeyPress'
 import React, {useState} from 'react';
 import PopBtn from './PopBtn';
+import Popup from './Popup2';
 
 
 function App() {
@@ -17,8 +18,14 @@ function App() {
   const [currentChar, setCurrentChar] = useState(initialWords.charAt(0));
   const [incomingChars, setIncomingChars] = useState(initialWords.substr(1))
   const [currentCharCorrect, setCurrentCharCorrect] = useState(true);
+  const [randomVar, setRandomVar] = useState(false);
+
+  function toggleVar() {
+    setRandomVar(!randomVar);
+  }
 
   useKeyPress(key => {
+
     //1
     setCurrentCharCorrect(true);
 
@@ -45,6 +52,7 @@ function App() {
       }
       setIncomingChars(updatedIncomingChars);
     } else {
+      setRandomVar(true);
       setCurrentCharCorrect(false);
     }
   });
@@ -69,13 +77,12 @@ function App() {
           Learn React
         </a>
       </header>
-      <PopBtn />
+      {randomVar ? <Popup text='end me' closePopup={toggleVar}/> : null}
     </div>
   );
 }
 
 export default App;
-
 
 
 // class App extends React.Component {
