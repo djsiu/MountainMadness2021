@@ -44,8 +44,7 @@ function TypingPage() {
   const [incomingChars, setIncomingChars] = useState(initialWords.substr(1))
   const [currentCharCorrect, setCurrentCharCorrect] = useState(true);
   const [popupFlag, setPopupFlag] = useState(false);
-  const soundUrl = '/sounds/chickenBok.mp3';
-  const [play] = useSound(soundUrl);
+  const [play] = useSound(chickenBok);
   const [startTyping, setStartTyping] = useState(false);
 
   const [startTime, setStartTime] = useState();
@@ -66,6 +65,8 @@ function TypingPage() {
     setIncomingChars(initialWords.substr(1));
     setCurrentCharCorrect(true);
     setPopupFlag(false);
+    setWpm(0);
+    setWordCount(0);
   }
 
   useKeyPress(key => {
@@ -110,13 +111,13 @@ function TypingPage() {
           }
             setIncomingChars(updatedIncomingChars);
           } else {
-          if(!popupFlag) {
-            index = Math.floor(Math.random()*keyWords.length);
-            chick_index = Math.floor(Math.random()*chicks.length);
-          }
-          setPopupFlag(true);
-          setCurrentCharCorrect(false);
-          play();
+            if(!popupFlag) {
+              index = Math.floor(Math.random()*keyWords.length);
+              chick_index = Math.floor(Math.random()*chicks.length);
+              play();
+            }
+            setPopupFlag(true);
+            setCurrentCharCorrect(false);
         }
   });
 
