@@ -18,14 +18,14 @@ class InputForm extends React.Component {
     }
 
     handleSubmit = (e) => {
-        console.log(this.props.text)
-        console.log(this.state.name)
         e.preventDefault();
         if (this.props.text === this.state.name) {
             this.props.closePopup();
         } else {
             this.setState({name : ''});
+            e.target.reset();
             console.log('not closing popup');
+            console.log(this.state.name);
         }
     }
 
@@ -33,7 +33,7 @@ class InputForm extends React.Component {
         return (
             <div>
                 <Form onSubmit={this.handleSubmit.bind(this)}>
-                    <input type="text" onChange={this.handleChange.bind(this)}/>
+                    <input onChange={this.handleChange.bind(this)} />
                 </Form>
             </div>
         );

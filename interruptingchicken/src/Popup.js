@@ -13,19 +13,12 @@ var chicks = [
 
 class Popup extends React.Component {
 
-  keyWords = [
-    "cluck",
-    "bok",
-    "egg",
-    "chicken",
-    "hen"
-  ];
 
   render() {
     return (
       <div className='popup'>
         <h1 className='keyWord'>{this.props.text}</h1>
-        <InputForm text={keyWords[Math.floor(Math.random()*keyWords.length)]} closePopup={this.props.closePopup}></InputForm>
+        <InputForm text={this.props.text} closePopup={this.props.closePopup}></InputForm>
         <img src={chicks[0]} className="chick-pic" alt="logo" />
       </div>
     );

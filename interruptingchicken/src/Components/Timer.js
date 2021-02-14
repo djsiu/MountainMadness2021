@@ -18,7 +18,7 @@ function Timer() {
   };
 
   var updatedMs = time.ms, updatedS = time.s, updatedM = time.m, updatedH = time.h;
-
+  
   const run = () => {
     if(updatedM === 60){
       updatedH++;
