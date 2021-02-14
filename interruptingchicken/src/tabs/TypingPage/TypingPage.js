@@ -6,6 +6,7 @@ import useKeyPress from '../../hooks/useKeyPress'
 import React, {useState} from 'react';
 import Popup from '../../Popup';
 import Timer from '../../Components/Timer';
+// import Timer from '../../Components/Timer2';
 import useSound from 'use-sound';
 import chickenBok from '../../sounds/chickenBok.mp3';
 import chick1 from '../../chickens/black-chick.png';
@@ -30,7 +31,7 @@ function TypingPage() {
     chick3
   ]
 
-  const initialWords = generate()
+  let initialWords = generate()
 
   const [leftPadding, setLeftPadding] = useState(
     new Array(20).fill(' ').join(''),
@@ -43,13 +44,29 @@ function TypingPage() {
   const [popupFlag, setPopupFlag] = useState(false);
   const soundUrl = '/sounds/chickenBok.mp3';
   const [play] = useSound(soundUrl);
+  const [startTyping, setStartTyping] = useState(false);
 
   function toggleVars() {
     setPopupFlag(!popupFlag);
   }
 
+  function restart() {
+    initialWords = generate();
+
+    setOutgoingChars('');
+    setStartTyping(!startTyping);
+    setCurrentChar(initialWords.charAt(0));
+    setIncomingChars(initialWords.substr(1));
+    setCurrentCharCorrect(true);
+    setPopupFlag(false);
+  }
+
   useKeyPress(key => {
     //1
+
+    if (startTyping == false) {
+      setStartTyping(true);
+    }
     setCurrentCharCorrect(true);
 
     let updatedOutgoingChars = outgoingChars;
@@ -98,7 +115,7 @@ function TypingPage() {
         </p>
       </header>
       {popupFlag ? <Popup text={keyWords[index]} closePopup={toggleVars} chick={chicks[chick_index]}/> : null}
-      <Timer/>
+      <Timer start={startTyping} restart={restart}/>
     </div>
   );
 }
