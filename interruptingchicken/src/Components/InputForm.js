@@ -10,7 +10,7 @@ class InputForm extends React.Component {
     }
 
     componentDidMount() {
-        this.myRef.focus();
+        //this.myRef.focus();
     }
 
     handleChange(e) {
@@ -38,7 +38,7 @@ class InputForm extends React.Component {
                 <Form onSubmit={this.handleSubmit.bind(this)}>
                     <input 
                     defaultValue=''
-                    ref={(input) => { this.myRef = input;}}
+                    //ref={(input) => { this.myRef = input;}}
                     onChange={this.handleChange.bind(this)} />
                 </Form>
             </div>
