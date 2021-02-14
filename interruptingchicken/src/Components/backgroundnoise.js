@@ -46,9 +46,9 @@ class Music extends React.Component {
     render= () => {
 
         return (
-            <div className="btn-block">
-                <button className="btn btn-gre" onClick={this.play}>Play</button>
-                <button className="btn btn-gre" onClick={this.pause}>Pause</button>
+            <div className="soundButtons">
+                <button className="btn play" onClick={this.play}>Music On</button>
+                <button className="btn pause" onClick={this.pause}>Music Off</button>
             </div>
         );
     }
