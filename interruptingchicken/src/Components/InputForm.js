@@ -37,7 +37,6 @@ class InputForm extends React.Component {
             <div>
                 <Form onSubmit={this.handleSubmit.bind(this)}>
                     <input 
-                    type="reset"
                     defaultValue=''
                     ref={(input) => { this.myRef = input;}}
                     onChange={this.handleChange.bind(this)} />
