@@ -15,6 +15,7 @@ function TypingPage() {
   const [leftPadding, setLeftPadding] = useState(
     new Array(20).fill(' ').join(''),
   );
+
   const [outgoingChars, setOutgoingChars] = useState('');
   const [currentChar, setCurrentChar] = useState(initialWords.charAt(0));
   const [incomingChars, setIncomingChars] = useState(initialWords.substr(1))

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Popup.css';
+import InputForm from './components/InputForm'
 
 class Popup extends React.Component {
   render() {
@@ -7,7 +8,8 @@ class Popup extends React.Component {
       <div className='popup'>
         <div className='popup_inner'>
           <h1>{this.props.text}</h1>
-          <button onClick={this.props.closePopup}>close me</button>
+          <InputForm closePopup={this.props.closePopup}></InputForm>
+          {/* <button onClick={this.props.closePopup}>close me</button> */}
         </div>
       </div>
     );
