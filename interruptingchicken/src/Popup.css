@@ -10,18 +10,6 @@
     background-color: rgba(0,0,0, 0.5);
   }
 
-  .popup_inner {
-    position: absolute;
-    left: 25%;
-    right: 25%;
-    top: 25%;
-    bottom: 25%;
-    margin: auto;
-    border-radius: 20px;
-    background: white;
-    opacity: 1.0;
-  }
-
 .keyWord {
     color: white;
     opacity: 1.0;
@@ -31,12 +19,3 @@
     height: 40vmin;
     pointer-events: none;
 }
-
-@keyframes chick-pic {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(45deg);
-    }
-  }

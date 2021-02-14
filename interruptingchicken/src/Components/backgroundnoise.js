@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './backgroundnoise.css';
 
 class Music extends React.Component {
     constructor(props) {
@@ -45,9 +46,9 @@ class Music extends React.Component {
     render= () => {
 
         return (
-            <div>
-                <button onClick={this.play}>Play</button>
-                <button onClick={this.pause}>Pause</button>
+            <div className="btn-block">
+                <button className="btn btn-gre" onClick={this.play}>Play</button>
+                <button className="btn btn-gre" onClick={this.pause}>Pause</button>
             </div>
         );
     }

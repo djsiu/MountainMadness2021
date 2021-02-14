@@ -1,0 +1,31 @@
+.btn-block {
+    min-height: 0vmin;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    background: #fff;
+    margin-left: 5px;
+    border: none;
+    padding: 6px 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background 1s;
+    cursor: pointer;
+}
+
+.btn-play{
+    position: relative;
+  }
+
+.btn-pause{
+    position: relative;
+  }
+
+.btn-gre {
+    border: 2px solid #00aba9;
+    color: #00aba9;
+  }

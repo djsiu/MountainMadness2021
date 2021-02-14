@@ -1,4 +1,3 @@
-//import logo from '../../logo.svg';
 import logo_chick from '../../chickens/white-chick.png'
 import './TypingPage.css';
 import {generate} from '../../utils/words'
