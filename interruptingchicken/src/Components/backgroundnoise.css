@@ -1,32 +1,31 @@
 .btn {
-    border-radius: 5px;
-    margin-left: 5px;
-    border: 2px solid #00aba9;
-    padding: 12px 20px;
-    font-size: 16px;
-    text-transform: uppercase;
-    width: 150px;
-    transition: background 1s;
-    cursor: pointer;
+  border-radius: 5px;
+  margin-left: 5px;
+  border: 2px solid #00aba9;
+  padding: 12px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 150px;
+  transition: background 1s;
+  cursor: pointer;
 }
 
 .soundButtons {
-    text-align: center;
-    min-height: 0vmin;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  text-align: center;
+  min-height: 0vmin;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .play {
-    color: white;
-    background: #00aba9;
-  }
-
+  color: white;
+  background: #00aba9;
+}
 
 .pause {
-    color: #00aba9;
-    background: white;
-    border-color: #00aba9;
-  }
+  color: #00aba9;
+  background: white;
+  border-color: #00aba9;
+}

@@ -6,7 +6,7 @@
 
 .clock-holder {
   width: 100%;
-  background: #282c34;
+  background: transparent;
   margin: 0px auto;
   position: relative;
 }
@@ -43,8 +43,11 @@
   color: #c85454;
 }
 .stopwatch .stopwatch-btn-yel {
-  border: 2px solid #ffc900;
-  color: #ffc900;
+  font-size: 18px;
+  border: 2px solid #ed6a5a;
+  border-radius: 5px;
+  color: #ed6a5a;
+  background-color: #3d5467;
 }
 
 .stopwatch .stopwatch-btn-gre {
@@ -57,9 +60,9 @@
   color: #fff;
 }
 .stopwatch .stopwatch-btn-yel:hover {
-  background: #ffc900;
-  border: 2px solid #ffc900;
-  color: #fff;
+  background: #ed6a5a;
+  border: 2px solid #ed6a5a;
+  color: #3d5467;
 }
 .stopwatch .stopwatch-btn-gre:hover {
   background: #00aba9;
