@@ -7,9 +7,13 @@ import React, {useState} from 'react';
 import Popup from '../../Popup';
 import Timer from '../../Components/Timer';
 import useSound from 'use-sound';
-import chickenBok from '../../sounds/chickenBok.mp3'
+import chickenBok from '../../sounds/chickenBok.mp3';
+import chick1 from '../../chickens/black-chick.png';
+import chick2 from '../../chickens/staring-chick.png';
+import chick3 from '../../chickens/broiler-chick.png';
 
 var index = 0;
+var chick_index = 0;
 
 function TypingPage() {
   var keyWords = [
@@ -19,6 +23,12 @@ function TypingPage() {
     "chicken",
     "hen"
   ];
+
+  var chicks = [
+    chick1,
+    chick2,
+    chick3
+  ]
 
   const initialWords = generate()
 
@@ -67,6 +77,7 @@ function TypingPage() {
     } else {
       if(!popupFlag) {
         index = Math.floor(Math.random()*keyWords.length);
+        chick_index = Math.floor(Math.random()*chicks.length);
       }
       setPopupFlag(true);
       setCurrentCharCorrect(false);
@@ -86,7 +97,7 @@ function TypingPage() {
           <span>{incomingChars.substr(0, 20)}</span>
         </p>
       </header>
-      {popupFlag ? <Popup text={keyWords[index]} closePopup={toggleVars}/> : null}
+      {popupFlag ? <Popup text={keyWords[index]} closePopup={toggleVars} chick={chicks[chick_index]}/> : null}
       <Timer/>
     </div>
   );
