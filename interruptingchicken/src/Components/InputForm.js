@@ -11,14 +11,17 @@ class InputForm extends React.Component {
     }
 
     handleChange(e) {
+        e.preventDefault();
         const {value} = e.target;
 
         this.setState({name: value});
     }
 
-    handleSubmit = () => {
-        console.log('closing popup');
-        if (this.props == this.state.value) {
+    handleSubmit = (e) => {
+        console.log(this.props.text)
+        console.log(this.state.name)
+        e.preventDefault();
+        if (this.props.text === this.state.name) {
             this.props.closePopup();
         } else {
             this.setState({name : ''});
@@ -28,10 +31,11 @@ class InputForm extends React.Component {
 
     render() {
         return (
-            <Form>
-                <input type="form-input" onChange={this.handleChange.bind(this)}/>
-                <input type="submit" value="Submit" onSubmit={this.handleSubmit.bind(this)}/>
-            </Form>
+            <div>
+                <Form onSubmit={this.handleSubmit.bind(this)}>
+                    <input type="text" onChange={this.handleChange.bind(this)}/>
+                </Form>
+            </div>
         );
     }
     
